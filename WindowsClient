@@ -1,0 +1,38 @@
+rt socket
+import pyttsx3
+engine=pyttsx3.init()
+engine.say("welcome to docker application hello team one")
+engine.runAndWait()
+from voice_recognize import voice_recognize
+
+print("\t\t\tAI PROJECT")
+print("\t\t\t..........")
+
+print(""" speak
+ to setup python terminal on docker
+ for setup git on docker
+ for setup webserver on docker
+ """)
+print("enter choise")
+
+s=socket.socket()
+serverip="192.168.43.45"
+serverport=1114
+s.connect( (serverip,serverport) )
+
+
+
+ch = voice_recognize()
+print(ch)
+if "python" in ch or "run" in ch:
+    cmd="1"
+    cmd=cmd.encode()
+    s.send(cmd)  
+elif "git" in ch or "terminal" in ch:
+    cmd="2"
+    cmd=cmd.encode()
+    s.send(cmd)  
+    
+else:
+    print("could not understand")
+    
